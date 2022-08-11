@@ -5,12 +5,9 @@ public class Account {
     private double balance;
     private int ownerId;
     
-    public Account() {
-    }
-    
-    public Account(int accountId, double balance, int ownerId) {
+    public Account(int accountId, int ownerId, double initialBalance) {
         this.accountId = accountId;
-        this.balance = balance;
+        this.balance = initialBalance;
         this.ownerId = ownerId;
     }
     
