@@ -8,17 +8,17 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class SequenceGeneratorTest {
     @Test
     void getNextAccount() {
+        int start = SequenceGenerator.getNextAccount();
         for (int i = 1; i < 100; i++) {
-            assertEquals(SequenceGenerator.getNextAccount(), i);
+            assertEquals(SequenceGenerator.getNextAccount(), start + i);
         }
-        assertNotEquals(SequenceGenerator.getNextAccount(), 0);
     }
     
     @Test
     void getNextTransactionId() {
+        int start = SequenceGenerator.getNextTransaction();
         for (int i = 1; i < 100; i++) {
-            assertEquals(SequenceGenerator.getNextTransaction(), i);
+            assertEquals(SequenceGenerator.getNextTransaction(), start + i);
         }
-        assertNotEquals(SequenceGenerator.getNextTransaction(), 0);
     }
 }
