@@ -34,4 +34,21 @@ class ValidatorTest {
         assertFalse(validator.validateAccounts(transaction3)); // Both Invalid accounts
     }
     
+    @Test
+    void validateAmountAvailableBalance() {
+        
+        Validator validator = new Validator();
+        
+        Transaction transaction1 = new Transaction(1,15, 1, 2);
+        assertTrue(validator.validateAmount(transaction1));
+    }
+    
+    @Test
+    void validateAmountNotAvailableBalance() {
+        
+        Validator validator = new Validator();
+        
+        Transaction transaction1 = new Transaction(2,150, 1, 2);
+        assertFalse(validator.validateAmount(transaction1));
+    }
 }
