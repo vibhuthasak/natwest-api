@@ -36,7 +36,11 @@ this is used as the constructor for Transaction)
 ]
 ``
    2. POST /api/transaction - Make a transaction
-      * Parameters
+      * Parameters *Required <br>
+      ```{"amount": 0,"destinationAccountId": 0,"sourceAccountId": 0}```
+      * Responses
+        * 200 "OK" - Transaction is completed
+        * 400 "Bad Request" - "Account Not Found", "Insufficient Account Balance"
 2. Account APIs
    1. GET /api/accounts - Get all accounts
        * Parameters - No parameters
