@@ -3,6 +3,7 @@ package com.example.natwestcasestudy.service.utility;
 import com.example.natwestcasestudy.data.DataSource;
 import com.example.natwestcasestudy.entity.Account;
 import com.example.natwestcasestudy.entity.Transaction;
+import com.example.natwestcasestudy.entity.TransactionStatus;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,6 +23,15 @@ public class EntityModifier {
             if (account.getAccountId() == destAccount) {
                 double currentBal = account.getBalance();
                 account.setBalance(currentBal + amount);
+            }
+        }
+    }
+    
+    public void modifyTransaction(Transaction transaction, TransactionStatus status) {
+        for (int i = 0; i < DataSource.transactionsList.size(); i++) {
+            Transaction ithTransaction = DataSource.transactionsList.get(i);
+            if (ithTransaction.getTransactionId() == transaction.getTransactionId()) {
+                ithTransaction.setTransactionStatus(status);
             }
         }
     }
