@@ -52,3 +52,7 @@ this is used as the constructor for Transaction)
              "ownerId": 0
              }
              ]``
+
+### Notes
+1. SequenceGenerator class is used to generate incremental account Ids and transaction Ids.
+2. DataSource class is used as the in-memory data store for the project.
