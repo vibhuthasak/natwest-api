@@ -12,17 +12,15 @@ import java.util.List;
 public class TransactionService {
     
     @Autowired
-    DataSource dataSource;
-    @Autowired
     Validator validator;
     
     public List<Transaction> getAllTransactions() {
-        return dataSource.transactionsList;
+        return DataSource.transactionsList;
     }
     
     public int makeTransaction(Transaction transaction) {
         // Adding transaction to the database as a pending transaction
-        dataSource.transactionsList.add(transaction);
+        DataSource.transactionsList.add(transaction);
         
         // Needs to validate accountId is exists on the database
         if (validator.validateAccounts(transaction)) {

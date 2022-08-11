@@ -10,11 +10,7 @@ import java.util.List;
 
 @Service
 public class AccountService {
-    
-    @Autowired
-    DataSource dataSource;
-    
     public List<Account> getAllAccounts() {
-        return dataSource.accountsList;
+        return DataSource.accountsList;
     }
 }
