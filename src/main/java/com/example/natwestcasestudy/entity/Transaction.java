@@ -6,17 +6,14 @@ public class Transaction {
     private int sourceAccountId;
     private int destinationAccountId;
     
-    private String transactionStatus;
-    
-    public Transaction() {
-    }
+    private TransactionStatus transactionStatus;
     
     public Transaction(int transactionId, double amount, int sourceAccountId, int destinationAccountId) {
         this.transactionId = transactionId;
         this.amount = amount;
         this.sourceAccountId = sourceAccountId;
         this.destinationAccountId = destinationAccountId;
-        this.transactionStatus = "PENDING";
+        this.transactionStatus = TransactionStatus.PENDING;
     }
     
     public int getTransactionId() {
@@ -27,11 +24,11 @@ public class Transaction {
         this.transactionId = transactionId;
     }
     
-    public String getTransactionStatus() {
+    public TransactionStatus getTransactionStatus() {
         return transactionStatus;
     }
     
-    public void setTransactionStatus(String transactionStatus) {
+    public void setTransactionStatus(TransactionStatus transactionStatus) {
         this.transactionStatus = transactionStatus;
     }
     
