@@ -53,13 +53,13 @@ class EntityModifierTest {
         DataSource.transactionsList.add(transaction1);
         
         EntityModifier entityModifier = new EntityModifier();
-    
+        
         entityModifier.modifyTransaction(transaction1, TransactionStatus.FAILED);
         
         assertEquals(TransactionStatus.FAILED, getTxStatus(transaction1.getTransactionId()));
-    
+        
         entityModifier.modifyTransaction(transaction1, TransactionStatus.SUCCESS);
-    
+        
         assertEquals(TransactionStatus.SUCCESS, getTxStatus(transaction1.getTransactionId()));
     }
     

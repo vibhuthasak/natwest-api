@@ -6,8 +6,14 @@ import com.example.natwestcasestudy.entity.Transaction;
 import com.example.natwestcasestudy.entity.TransactionStatus;
 import org.springframework.stereotype.Service;
 
+/**
+ * This class use to modify the entities
+ */
 @Service
 public class EntityModifier {
+    
+    // Transfer amount from one account to another account.
+    // Src/Dest accounts and amount is on the Transaction entity
     public void transferTransaction(Transaction transaction) {
         
         int srcAccount = transaction.getSourceAccountId();
@@ -27,6 +33,8 @@ public class EntityModifier {
         }
     }
     
+    // Modify the transaction status of a transaction.
+    // Search the DB and modify the transaction.
     public void modifyTransaction(Transaction transaction, TransactionStatus status) {
         for (int i = 0; i < DataSource.transactionsList.size(); i++) {
             Transaction ithTransaction = DataSource.transactionsList.get(i);

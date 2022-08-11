@@ -5,6 +5,9 @@ import com.example.natwestcasestudy.entity.Account;
 import com.example.natwestcasestudy.entity.Transaction;
 import org.springframework.stereotype.Service;
 
+/**
+ * Validator of AccountIds and Transaction Amount available on the source account.
+ */
 @Service
 public class Validator {
     public boolean validateAccounts(Transaction transaction) {
