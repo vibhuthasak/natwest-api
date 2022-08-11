@@ -1,12 +1,14 @@
 package com.example.natwestcasestudy.entity;
 
+import com.example.natwestcasestudy.service.utility.SequenceGenerator;
+
 public class Account {
     private int accountId;
     private double balance;
     private int ownerId;
     
-    public Account(int accountId, int ownerId, double initialBalance) {
-        this.accountId = accountId;
+    public Account(int ownerId, double initialBalance) {
+        this.accountId = SequenceGenerator.getNextAccount();
         this.balance = initialBalance;
         this.ownerId = ownerId;
     }

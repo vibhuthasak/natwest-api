@@ -1,5 +1,7 @@
 package com.example.natwestcasestudy.entity;
 
+import com.example.natwestcasestudy.service.utility.SequenceGenerator;
+
 public class Transaction {
     private int transactionId;
     private double amount;
@@ -8,8 +10,8 @@ public class Transaction {
     
     private TransactionStatus transactionStatus;
     
-    public Transaction(int transactionId, double amount, int sourceAccountId, int destinationAccountId) {
-        this.transactionId = transactionId;
+    public Transaction(double amount, int sourceAccountId, int destinationAccountId) {
+        this.transactionId = SequenceGenerator.getNextTransaction();
         this.amount = amount;
         this.sourceAccountId = sourceAccountId;
         this.destinationAccountId = destinationAccountId;
